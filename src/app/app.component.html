@@ -1,3 +1,45 @@
 
-<app-user/>
+
+<!-- 
+
+<p-sidebar [(visible)]="display" position="left">
+  <ng-template pTemplate="header">Header Content</ng-template>
+  
+
+ 
+
+  <ng-template pTemplate="footer">Footer Content</ng-template>
+</p-sidebar> -->
+<p-sidebar [(visible)]="display" [baseZIndex]="10000">
+  <!-- <p-button type="button" (click)="display = false" label="Save" styleClass="p-button-success"></p-button>
+  <p-button type="button" (click)="display = false" label="Cancel" styleClass="p-button-secondary"></p-button> -->
+
+  <ng-template pTemplate="content"> 
+    <mat-list #shoes >
+    <mat-list-item *ngFor="let shoe of typesOfShoes" >
+     <a href="#"> {{shoe}}</a>
+    </mat-list-item>
+  </mat-list>  
+</ng-template>
+<ng-template pTemplate="footer">
+  with love 💚
+</ng-template>
+  <!-- <p>
+    Option selected: {{shoes.selectedOptions.selected[0]?.value}}
+  </p> -->
+</p-sidebar>
+  <!-- Contenido principal -->
+  <div>
+    <!-- <button pButton type="button" label="Abrir Sidebar" (click)="openSidebar()"></button> -->
+    <button mat-icon-button (click)="openSidebar()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    
+    <app-user/>
+    <router-outlet></router-outlet>
+  </div>
+
+
+
 <router-outlet></router-outlet>

@@ -2,11 +2,22 @@
 
 <section>
 
-@if (islogueado){
+<!-- @if (islogueado){
   <p>Bienvenido usuario {{name}}</p>
 }@else{
   <p>Logueate primero</p>
-}
+} -->
+<p-card header={{name}} subheader={{job}} [style]="{ width: '100%' }">
+  <ng-template pTemplate="header">
+      <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
+  </ng-template>
+  <p>
+      Si puedes soñarlo, puedes programarlo.
+      Eterno estudiante y apasinado por el ecosistema Java.
+  </p>
+  <ng-template pTemplate="footer">
+  
+  </ng-template>
+</p-card>
 
-<app-games></app-games>
 </section>
